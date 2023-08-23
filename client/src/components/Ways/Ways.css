@@ -1,0 +1,88 @@
+
+.easy-ways {
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 30px 220px;
+    margin-top: 100px;
+}
+
+.line {
+    margin-bottom: 20px;
+}
+
+.ways-container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.easy-ways .heading {
+    font-family: "El Messiri";
+    font-size: 50px;
+}
+
+.easy-ways h3 {
+    font-family: "PT Sans";
+}
+
+.lines {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.lines:last-child {
+    margin-right: 30px;
+}
+
+.ways-image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.ways-card h1 {
+    font-family: "PT Sans";
+    font-size: 28px;
+}
+
+.ways-card p {
+    color: #db9e30;
+    font-weight: 600;
+}
+
+.ways-image .quran {
+    width: 400px;
+}
+
+.ways {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+}
+
+.ways-card {
+    width: 800px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.ways-card .icons i {
+    font-size: 45px;
+    color: #b99534;
+}

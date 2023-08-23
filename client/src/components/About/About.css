@@ -1,0 +1,111 @@
+.about-section {
+    width: 100%;
+    height: 107vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.content {
+    font-family: 'El Messiri', sans-serif;
+    width: 65%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 40px;
+}
+
+.about-section h1 {
+    font-size: 62px;
+    line-height: 1;
+}
+
+.content img {
+    margin: 10px 0;
+}
+
+.content p {
+    margin: 10px 0;
+}
+
+.content .list {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.content ul {
+    width: 45%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    list-style: square;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.content ul li {
+    margin: 10px 30px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.content a {
+    background-color: #db9e30;
+    border-radius: 5px;
+    padding: 10px 30px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.content a:hover {
+    background-color: #C17E03;
+}
+
+.image {
+    width: 36%;
+    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #faf0e0;
+    padding: 30px;
+    background-image: url("https://alsafaaquran.com/wp-content/uploads/2023/07/bg-prayer-time.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+
+.image h3 {
+    font-size: 30px;
+    font-family: 'El Messiri';
+}
+
+.image .outline {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 90%;
+}
+
+.image .bismillah {
+    width: 250px;
+}
+
+.image .quran {
+    width: 320px;
+}
+
+.image .dotted-line {
+    width: 100%;
+    border: 0.8px dashed #db9e30;
+}

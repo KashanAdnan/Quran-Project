@@ -1,0 +1,90 @@
+
+footer {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(0deg, #000000 10%, #000000AB 100%), url("../../img/banner.jpg");
+    background-size: cover;
+    background-position: top;
+    margin-top: 30px;
+    flex-direction: column;
+    background-repeat: no-repeat;
+}
+
+
+footer .cols {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #817b70;
+}
+
+.col {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.col-1 img {
+    width: 200px;
+}
+
+.col-1 p {
+    font-family: "PT Sans";
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+.col-1 .icons i {
+    margin-right: 10px;
+    font-size: 19px;
+}
+
+.col-2 h1,
+.col-3 h1,
+.col-4 h1 {
+    font-family: "El Messiri";
+}
+
+.col ul {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 10px;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-family: "PT Sans";
+}
+
+.col li {
+    list-style: none;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.col li i {
+    margin-right: 10px;
+}
+
+footer hr {
+    width: 80%;
+}
+
+.footer-bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-bottom p {
+    color: #fff;
+    margin: 20px;
+    font-family: "Poppins";
+}
