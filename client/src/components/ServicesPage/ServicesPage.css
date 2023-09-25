@@ -1,0 +1,119 @@
+.services-container {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.581), rgba(0, 0, 0, 0.726)), url("https://alsafaaquran.com/wp-content/uploads/2023/07/bg-servis.jpg");
+    background-size: cover;
+    background-position: top;
+    flex-direction: column;
+}
+
+.service-main-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 0 90px;
+}
+
+.left-side-service {
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: left;
+    padding: 30px;
+}
+
+.left-side-service h3 {
+    font-family: "PT Sans";
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.left-side-service h1 {
+    font-family: "El Messiri";
+    font-size: 60px;
+}
+
+.left-side-service p {
+    color: #525252;
+    font-family: "PT Sans";
+    line-height: 30px;
+}
+
+.left-side-service img {
+    margin: 35px 0 55px 0;
+}
+
+.right-side-service {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.right-side-service .fixed {
+    width: 400px;
+    left: 820px;
+    height: 400px;
+    top: 660px;
+    position: absolute;
+}
+
+.right-side-service .serive {
+    width: 400px;
+    height: 400px;
+    position: relative;
+}
+
+.services-cards {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+
+.service-page-card {
+    width: 400px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: "PT Sans";
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding: 20px 10px !important;
+}
+
+.service-page-card:hover {
+    border: 3px solid #f7f7f7;
+}
+
+.service-page-card h1 {
+    font-size: 27px;
+    margin: 20px 0;
+}
+
+.service-page-card p {
+    width: 345px;
+    color: #817b70;
+    text-align: center;
+    line-height: 27px;
+    font-size: 14px;
+}
+
+.services-cards .service-page-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 30px;
+}

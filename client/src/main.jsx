@@ -9,8 +9,11 @@ import {
 import "./index.css"
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
-import Navbar from "./components/Navbar/Navbar";
 import Register from "./components/Register/Register";
+import AboutPage from "./components/AboutPage/AboutPage";
+import ServicesPage from "./components/ServicesPage/ServicesPage";
+import Packages from "./components/Packages/Packages";
+import Contact from "./components/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +34,30 @@ const router = createBrowserRouter([
     path: "register",
     element: (
       <Register />
+    ),
+  },
+  {
+    path: "about",
+    element: (
+      <AboutPage />
+    ),
+  },
+  {
+    path: "services",
+    element: (
+      <ServicesPage />
+    ),
+  },
+  {
+    path: "packages",
+    element: (
+      <Packages />
+    ),
+  },
+  {
+    path: "contact",
+    element: (
+      <Contact />
     ),
   },
 ]);

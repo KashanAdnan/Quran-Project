@@ -1,0 +1,136 @@
+.pacakges-container {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.581), rgba(0, 0, 0, 0.726)), url("https://alsafaaquran.com/wp-content/uploads/2023/07/bg-servis.jpg");
+    background-size: cover;
+    background-position: top;
+    flex-direction: column;
+}
+
+.packages-main-container{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.packages-cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.pacakges-card {
+    width: 360px;
+    height: 480px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.4s;
+}
+
+.pacakges-card:hover {
+    height: 500px;
+}
+
+.pacakges-card .package-header {
+    width: 100%;
+    background-color: #be9552;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    font-family: "PT Sans";
+}
+
+
+.package-header p {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.package-header span {
+    position: absolute;
+    top: 28px;
+    right: 6px;
+    transform: rotate(45deg);
+}
+
+.pacakges-card .packages-center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.pacakges-card .packages-center a {
+    background-color: #be9552;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #be9552;
+    text-align: center;
+    padding: 10px 15px;
+    font-family: "Poppins";
+}
+
+.pacakges-card ul {
+    font-family: "PT Sans";
+    list-style: none;
+    height: 100%;
+    width: 100%;
+    padding: 0 25px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pacakges-card ul li {
+    border-bottom: 1px solid #f4f4f4;
+    color: #565b7c;
+    width: 100%;
+    padding: 15px;
+}
+
+.pacakges-card ul li:last-child {
+    border: 0;
+}
+
+.pacakges-card .packages-center h1 {
+    font-family: "Poppins";
+    color: #be9552;
+    font-size: 35px;
+    font-weight: 400;
+    border-bottom: 1px solid #f4f4f4;
+    padding-bottom: 13px;
+}
+
+.packages-center h1 span {
+    font-family: "PT Sans";
+    font-size: 25px;
+    color: #000;
+}
+
+.packages-center h1 sub {
+    font-family: "PT Sans";
+    font-size: 20px;
+    color: #000;
+}

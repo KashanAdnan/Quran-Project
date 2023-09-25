@@ -1,0 +1,120 @@
+.about-page-container {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.581), rgba(0, 0, 0, 0.726)), url("https://alsafaaquran.com/wp-content/uploads/2023/07/bg-about1.jpg");
+    background-size: cover;
+    background-position: top;
+    flex-direction: column;
+}
+
+
+.main-container {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container h1 {
+    font-size: 70px;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: "El Messiri";
+}
+
+.about-page-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 25px 100px;
+}
+
+.about-page-section .about-heading h1 {
+    font-family: "El Messiri";
+    font-size: 55px;
+}
+
+.about-page-section .left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.about-page-section .right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-page-section .left img {
+    margin: 20px 0;
+}
+
+.line-2 {
+    width: 250px;
+}
+
+.about-left-right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0 60px 0;
+}
+
+.left h1,
+.left h3 {
+    font-family: "El Messiri";
+}
+
+.left h1 {
+    font-size: 40px;
+}
+
+.left h3 {
+    font-size: 27px;
+}
+
+.left p {
+    font-family: "PT Sans";
+    color: #626262;
+    line-height: 33px;
+    font-size: 15px;
+}
+.inviting{
+    width: 100%;
+    height: 70vh;
+    background-image: url("https://alsafaaquran.com/wp-content/uploads/2023/07/bg-ornamens.png");
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #d3a34a;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: -30px;
+    margin-top: 100px;
+}
+.inviting h1{
+    font-family: "El Messiri";
+    color: #fff;
+    font-size: 64px;
+    line-height: 70px;
+    margin-top: 50px;
+}
+
+.inviting img{
+    width: 250px;
+}

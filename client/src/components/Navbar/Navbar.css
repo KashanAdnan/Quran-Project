@@ -52,7 +52,3 @@ nav.navbar .button a {
     font-size: 15px;
     cursor: pointer;
 }
-
-nav.navbar .button a:hover {
-    color: #f0b14d;
-}

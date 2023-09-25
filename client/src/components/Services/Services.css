@@ -44,7 +44,8 @@
     color: #69727d;
 }
 
-.service-card button {
+.service-card a {
+    text-decoration: none;
     padding: 12px 20px;
     border: 1px solid #db9e30;
     border-radius: 5px;

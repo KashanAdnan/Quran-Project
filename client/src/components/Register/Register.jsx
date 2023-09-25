@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navbar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
 import axios from "axios";
+import "./Register.css"
 import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
@@ -13,14 +14,15 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post("http://localhost:3000/api/v1/register", { name, phone, email, password }).then((res) => {
-            navigate("/")
+            // navigate("/")
+            console.log(res);
         }).catch((err) => {
             console.log(err);
         })
     }
     return (
         <>
-            <div className="login-container">
+            <div className="signup-container">
                 <Navbar />
                 <div className="main-container">
                     <h1>Register</h1>
@@ -31,19 +33,19 @@ const Register = () => {
                     <h1>Create Your Account</h1>
                     <div className="input-label">
                         <label htmlFor="Name">Name</label>
-                        <input type="text" onChange={(e) => setName(e.target.value)} />
+                        <input type="text" placeholder='Enter Name' onChange={(e) => setName(e.target.value)} />
                     </div>
                     <div className="input-label">
                         <label htmlFor="Phone">Phone</label>
-                        <input type="text" minLength={10} maxLength={10} onChange={(e) => setPhone(e.target.value)} />
+                        <input type="text" placeholder='Enter Phone' minLength={10} maxLength={10} onChange={(e) => setPhone(e.target.value)} />
                     </div>
                     <div className="input-label">
                         <label htmlFor="Email">Email</label>
-                        <input type="email" onChange={(e) => setEmail(e.target.value)} />
+                        <input type="email" placeholder='Enter Email' onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className="input-label">
                         <label htmlFor="password">Password</label>
-                        <input type="password" onChange={(e) => setPassword(e.target.value)} />
+                        <input type="password" placeholder='Enter Password' onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <p>
                         Have an account ?

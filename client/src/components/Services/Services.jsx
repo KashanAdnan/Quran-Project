@@ -3,6 +3,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Services.css'
 import { faBookQuran, faPeopleCarryBox, faMosque } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 const Services = () => {
     return (
@@ -18,7 +19,7 @@ const Services = () => {
                         courses to make you understand the teachings of Islam and the commandments of Allah (SWT). You can
                         choose a course that you have an interest in, begin taking classes online, and apply the principles
                         of Islam in every aspect of your life.</p>
-                    <button>Read More</button>
+                    <Link to={"/services"}>Read More</Link>
                 </div>
                 <div className="service-card">
                     <FontAwesomeIcon className='icon' icon={faMosque} />
@@ -28,7 +29,7 @@ const Services = () => {
                         learning classes to ensure your child can recite the holy Quran without any hesitation and
                         understand the translation
                         as well.</p>
-                    <button>Read More</button>
+                    <Link to={"/services"}>Read More</Link>
                 </div>
                 <div className="service-card">
                     <FontAwesomeIcon className='icon' icon={faPeopleCarryBox} />
@@ -40,7 +41,7 @@ const Services = () => {
                         online classes.
 
                     </p>
-                    <button>Read More</button>
+                    <Link to={"/services"}>Read More</Link>
                 </div>
                 <div className="service-card">
                     <FontAwesomeIcon className='icon' icon={faBookQuran} />
@@ -49,7 +50,7 @@ const Services = () => {
                         courses to make you understand the teachings of Islam and the commandments of Allah (SWT). You can
                         choose a course that you have an interest in, begin taking classes online, and apply the principles
                         of Islam in every aspect of your life.</p>
-                    <button>Read More</button>
+                    <Link to={"/services"}>Read More</Link>
                 </div>
                 <div className="service-card">
                     <FontAwesomeIcon className='icon' icon={faMosque} />
@@ -59,7 +60,7 @@ const Services = () => {
                         learning classes to ensure your child can recite the holy Quran without any hesitation and
                         understand the translation
                         as well.</p>
-                    <button>Read More</button>
+                    <Link to={"/services"}>Read More</Link>
                 </div>
             </div>
         </div>

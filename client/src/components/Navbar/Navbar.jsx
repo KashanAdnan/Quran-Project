@@ -3,7 +3,7 @@ import './Navbar.css'
 import logo from "../../img/logo.png"
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({section}) => {
     return (
         <nav className="navbar">
             <a className="logo">
@@ -12,11 +12,11 @@ const Navbar = () => {
             <div className="nav-responsive">
                 <div className="nav-items">
                     <ul className="links">
-                        <li><a href="#" className="active">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Our Services</a></li>
-                        <li><a href="#">Packages</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><Link to="/" className={section === "home" && "active"}>Home</Link></li>
+                        <li><Link to="/about" className={section === "about-us" && "active"}>About Us</Link></li>
+                        <li><Link to="/services" className={section === "our-services" && "active"}>Our Services</Link></li>
+                        <li><Link to="/packages" className={section === "packages" && "active"}>Packages</Link></li>
+                        <li><Link to="/contact" className={section === "contact-us" && "active"}>Contact Us</Link></li>
                     </ul>
                 </div>
                 <div className="button">
