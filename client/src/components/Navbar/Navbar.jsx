@@ -3,7 +3,7 @@ import './Navbar.css'
 import logo from "../../img/logo.png"
 import { Link } from "react-router-dom";
 
-const Navbar = ({section}) => {
+const Navbar = ({ section }) => {
     return (
         <nav className="navbar">
             <a className="logo">

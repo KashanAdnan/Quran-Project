@@ -11,7 +11,7 @@ import jwt from 'jsonwebtoken'
 connectDatabase(process.env.MONGODB_URI)
 const app = express()
 app.use(cookieParser())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 
 app.use(cors({ origin: "*" }))
 app.use(express.json())
@@ -64,17 +64,31 @@ app.post("/api/v1/login", async (req, res) => {
     }
     const matchPassword = comparePassword(password, user.password)
     if (matchPassword) {
-        jwt.sign({ id: user._id }, process.env.JWT_SECRET, {}, (err, token) => {
+        jwt.sign({ name: user.name, email: user.email, phone: user.phone, id: user._id }, process.env.JWT_SECRET, {}, (err, token) => {
             if (err) {
                 throw err
             }
-            res.cookie('token', token).json(user)
+            console.log(token);
+            res.cookie(' token', token, { expires: new Date(Date.now() + 9999999), httpOnly: false }).send({ user, token })
         })
     }
     if (!matchPassword) {
 
         res.status(200).send({
             message: "Password Do Not Matched"
+        })
+    }
+})
+
+app.get("/api/v1/profile", (req, res) => {
+    const token = req.cookies;
+    if (token) {
+        jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
+            if (err) {
+                throw err
+            }
+
+            res.json(user)
         })
     }
 })

@@ -7,10 +7,10 @@ import Student from '../Students/Student';
 import Footer from '../Footer/Footer';
 import Way from '../Ways/Way';
 import { Link } from "react-router-dom";
-
+import { UserContextProvider } from "../../../context/userContext"
 const Home = () => {
     return (
-        <>
+        <UserContextProvider>
             <div className="container">
                 <Navbar section={"home"} />
                 <div className="main-container">
@@ -31,7 +31,7 @@ const Home = () => {
             <Student />
             <Way />
             <Footer />
-        </>
+        </UserContextProvider>
     )
 }
 
