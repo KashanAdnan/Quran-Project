@@ -6,15 +6,9 @@ import Services from '../Services/Services';
 import Student from '../Students/Student';
 import Footer from '../Footer/Footer';
 import Way from '../Ways/Way';
-import axios from 'axios';
 import { Link } from "react-router-dom";
 
 const Home = () => {
-    axios.get("http://localhost:3000/api/v1/me").then((res) => {
-        console.log(res);
-    }).catch((err) => {
-        console.log(err);
-    })
     return (
         <>
             <div className="container">

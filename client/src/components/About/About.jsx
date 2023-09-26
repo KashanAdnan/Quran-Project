@@ -9,7 +9,7 @@ const Services = () => {
             <div className="content">
                 <h1>Welcome to Wasif Bin Asif quran institute</h1>
                 <img src={line} className="bismillah" alt="asdas" />
-                <p>Al Safaa Quran institute provides opportunity to learn Quran by just sitting at home.These courses are
+                <p>Wasif Bin Asif Quran institute provides opportunity to learn Quran by just sitting at home.These courses are
                     specially for people that live in western countries like US,UK,Australia,Canada or anywhere in the
                     world.</p>
                 <div className="list">

@@ -78,6 +78,10 @@ main {
     color: #212121;
 }
 
+.toast{
+    font-family: "Poppins" !important;
+}
+
 .form-container .input-label label {
     font-family: "El Messiri";
     color: #db9e30;

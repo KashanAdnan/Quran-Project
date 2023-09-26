@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navbar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
 import axios from "axios";
+import { toast, Toaster } from "react-hot-toast"
 import "./Register.css"
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -14,10 +15,12 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios.post("http://localhost:3000/api/v1/register", { name, phone, email, password }).then((res) => {
-            // navigate("/")
-            console.log(res);
+            toast.success("Register Successfully!")
+            setInterval(() => {
+                navigate("/")
+            }, 700)
         }).catch((err) => {
-            console.log(err);
+            toast.error(err.response.data.error)
         })
     }
     return (
@@ -55,6 +58,7 @@ const Register = () => {
                 </form>
             </div>
             <Footer />
+            <Toaster className="toast" />
         </>
     )
 }

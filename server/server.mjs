@@ -2,11 +2,16 @@ import express from "express";
 import mongoose from "mongoose";
 import userModel from "./models/userModel.mjs"
 import cors from "cors"
+import cookieParser from "cookie-parser";
 import "./setupEnv.mjs"
+import { hashPassword, comparePassword } from "./helpers/auth.mjs"
 import connectDatabase from "./DB/connectDB.mjs"
+import jwt from 'jsonwebtoken'
 
 connectDatabase(process.env.MONGODB_URI)
 const app = express()
+app.use(cookieParser())
+app.use(express.urlencoded({ extended: false }))
 
 app.use(cors({ origin: "*" }))
 app.use(express.json())
@@ -19,28 +24,59 @@ app.get("/api/v1/users", async (req, res) => {
     })
 })
 app.post("/api/v1/register", async (req, res) => {
-    const user = await userModel.create({
-        name: req.body.name,
-        phone: req.body.phone,
-        email: req.body.email,
-        password: req.body.password,
-    });
-    res.status(200).send({
-        sucess: true,
-        user
-    })
+    try {
+        const { name, email, phone, password } = req.body;
+        if (!name) {
+            res.status(430).send({ error: `Please Fill Name` })
+        }
+        if (!phone) {
+            res.status(430).send({ error: `Please Fill Phone` })
+        }
+        if (password < 6) {
+            res.status(430).send({ error: `Please ` })
+        }
+        const data = await userModel.findOne({ email })
+        if (data) {
+            res.status(430).send({ error: `Email Already Exits !` })
+        }
+        const hashPasswords = await hashPassword(password)
+        const user = await userModel.create({
+            name,
+            phone,
+            email,
+            password: hashPasswords,
+        });
+        res.status(200).send({
+            sucess: true,
+            user
+        })
+    } catch (error) {
+
+    }
 })
 app.post("/api/v1/login", async (req, res) => {
-    const user = await userModel.create({
-        name: req.body.name,
-        phone: req.body.phone,
-        email: req.body.email,
-        password: req.body.password,
-    });
-    res.status(200).send({
-        sucess: true,
-        user
-    })
+    const { email, password } = req.body
+    const user = await userModel.findOne({ email })
+    if (!user) {
+        return res.send({
+            error: "No user found"
+        })
+    }
+    const matchPassword = comparePassword(password, user.password)
+    if (matchPassword) {
+        jwt.sign({ id: user._id }, process.env.JWT_SECRET, {}, (err, token) => {
+            if (err) {
+                throw err
+            }
+            res.cookie('token', token).json(user)
+        })
+    }
+    if (!matchPassword) {
+
+        res.status(200).send({
+            message: "Password Do Not Matched"
+        })
+    }
 })
 
 app.listen(process.env.PORT, () => {

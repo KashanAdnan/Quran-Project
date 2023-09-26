@@ -20,7 +20,7 @@ const Navbar = ({section}) => {
                     </ul>
                 </div>
                 <div className="button">
-                    <Link to="/login">Login Now !</Link>
+                    <Link to="/register">Register now for free</Link>
                 </div>
             </div>
         </nav>

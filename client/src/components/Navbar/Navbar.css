@@ -50,5 +50,6 @@ nav.navbar .button a {
     padding: 18px 22px 13px;
     border-radius: 5px;
     font-size: 15px;
+    font-family: "Poppins";
     cursor: pointer;
 }
