@@ -1,143 +1,149 @@
 .easy-ways {
-    width: 100%;
-    height: 120vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 30px 220px;
-    margin-top: 100px;
+  width: 100%;
+  height: 120vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 30px 220px;
+  margin-top: 100px;
 }
 
 .line {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .ways-container {
-    width: 100%;
-    height: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .easy-ways .heading {
-    font-family: "El Messiri";
-    font-size: 50px;
+  font-family: "El Messiri";
+  font-size: 50px;
 }
 
 .easy-ways h3 {
-    font-family: "PT Sans";
+  font-family: "PT Sans";
 }
 
 .lines {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .lines:last-child {
-    margin-right: 30px;
+  margin-right: 30px;
 }
 
 .ways-image {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-    flex-direction: column;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 .ways-card h1 {
-    font-family: "PT Sans";
-    font-size: 28px;
+  font-family: "PT Sans";
+  font-size: 28px;
 }
 
 .ways-card p {
-    color: #db9e30;
-    font-family: "El Messiri" !important;
-    font-weight: 600;
+  color: #db9e30;
+  font-family: "El Messiri" !important;
+  font-weight: 600;
 }
 
 .ways-image .quran {
-    width: 400px;
+  width: 400px;
 }
 
 .ways {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    height: 100%;
-    width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
 }
 
 .ways-card {
-    width: 800px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+  width: 800px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .ways-card .icons i {
-    font-size: 45px;
-    color: #b99534;
+  font-size: 45px;
+  color: #b99534;
 }
 
-@media (max-width:820px) {
-    .easy-ways {
-        height: auto;
-        width: 100%;
-        flex-direction: column;
-        padding: 0 10px;
-    }
+@media (max-width: 820px) {
+  .easy-ways {
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    padding: 0 10px;
+  }
 
-    .easy-ways h3 {
-        width: 80%;
-        padding: 0 30px;
-        margin-bottom: 15px;
-    }
+  .easy-ways h3 {
+    width: 80%;
+    padding: 0 30px;
+    margin-bottom: 15px;
+  }
 
-    .easy-ways .heading {
-        padding: 0 10px 0 30px;
-        margin-bottom: 15px;
-        font-size: 35px;
-    }
+  .easy-ways .heading {
+    padding: 0 10px 0 30px;
+    margin-bottom: 15px;
+    font-size: 35px;
+  }
 
-    .easy-ways .lines img:last-child {
-        display: none;
-    }
+  .easy-ways .lines img:last-child {
+    display: none;
+  }
 
-    .easy-ways .lines {
-        justify-content: center;
-    }
+  .easy-ways .lines {
+    justify-content: center;
+  }
 
-    .ways-container {
-        flex-direction: column;
-    }
+  .ways-container {
+    flex-direction: column;
+  }
 
-    .ways {
-        width: 100%;
-    }
+  .ways {
+    width: 100%;
+  }
 
-    .ways-card {
-        width: 100%;
-    }
+  .ways-card {
+    width: 100%;
+  }
 
-    .content {
-        width: 100%;
-    }
+  .content {
+    width: 100%;
+  }
 
-    .ways-image {
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
+  .ways-image {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .ways-image .quran {
-        width: 300px;
-    }
+  .ways-image .quran {
+    width: 70%;
+  }
+  .footer-bottom p {
+    text-align: center;
+  }
+  .col {
+    margin-top: 20px;
+  }
 }
