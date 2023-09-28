@@ -61,7 +61,7 @@
     width: 400px;
     left: 820px;
     height: 400px;
-    top: 660px;
+    top: 620px;
     position: absolute;
 }
 
@@ -100,6 +100,7 @@
 
 .service-page-card h1 {
     font-size: 27px;
+    font-family: "PT Sans";
     margin: 20px 0;
 }
 
@@ -107,6 +108,7 @@
     width: 345px;
     color: #817b70;
     text-align: center;
+    font-family: "PT Sans";
     line-height: 27px;
     font-size: 14px;
 }
@@ -116,4 +118,60 @@
     height: 200px;
     object-fit: cover;
     border-radius: 30px;
+}
+
+@media (max-width:820px) {
+    .service-main-container {
+        flex-direction: column;
+        height: auto;
+        padding: 0;
+    }
+
+    .left-side-service {
+        width: 100% !important;
+    }
+
+    .right-side-service {
+        width: 100% !important;
+        justify-content: center;
+    }
+
+    .right-side-service .fixed {
+        display: none;
+    }
+
+    .services-cards {
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .packages-cards {
+        flex-wrap: wrap;
+    }
+
+    .packages-main-container {
+        height: auto;
+    }
+
+    .contact-main-container {
+        height: auto;
+        margin-top: 40px;
+    }
+
+    .contact-form {
+        justify-content: flex-start;
+    }
+
+    .contact-ways {
+        flex-wrap: wrap;
+    }
+
+    .contact-ways .way {
+        margin-top: 20px;
+    }
+
+    .form-container {
+        width: 100% !important;
+    }
+
 }

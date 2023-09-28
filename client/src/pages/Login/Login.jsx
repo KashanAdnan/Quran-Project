@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Navbar from "../Navbar/Navbar"
+import Navbar from "../../components/Navbar/Navbar"
 import "./Login.css";
-import Footer from "../Footer/Footer"
+import Footer from "../../components/Footer/Footer"
 import axios from "axios";
 import { toast, Toaster } from "react-hot-toast"
 import { Link, useNavigate } from 'react-router-dom';

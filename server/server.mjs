@@ -13,7 +13,11 @@ const app = express()
 app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }))
 
-app.use(cors({ origin: "*" }))
+app.use(cors({
+    credentials: true,
+    origin: "http://localhost:5173"
+}))
+
 app.use(express.json())
 
 app.get("/api/v1/users", async (req, res) => {
@@ -81,13 +85,10 @@ app.post("/api/v1/login", async (req, res) => {
 })
 
 app.get("/api/v1/profile", (req, res) => {
-    const token = req.cookies;
+    const { token } = req.cookies;
     if (token) {
         jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
-            if (err) {
-                throw err
-            }
-
+            if (err) throw err
             res.json(user)
         })
     }

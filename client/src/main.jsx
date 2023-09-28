@@ -3,17 +3,15 @@ import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Link,
 } from "react-router-dom";
 import "./index.css"
-import Home from "./components/Home/Home";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
-import AboutPage from "./components/AboutPage/AboutPage";
-import ServicesPage from "./components/ServicesPage/ServicesPage";
-import Packages from "./components/Packages/Packages";
-import Contact from "./components/Contact/Contact";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
+import Packages from "./pages/Packages/Packages";
+import Contact from "./pages/Contact/Contact";
+import About from "./pages/About/About";
+import Services from "./pages/Service/Service";
 
 const router = createBrowserRouter([
   {
@@ -39,13 +37,13 @@ const router = createBrowserRouter([
   {
     path: "about",
     element: (
-      <AboutPage />
+      <About />
     ),
   },
   {
     path: "services",
     element: (
-      <ServicesPage />
+      <Services />
     ),
   },
   {

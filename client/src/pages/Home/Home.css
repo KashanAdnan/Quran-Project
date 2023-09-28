@@ -67,3 +67,50 @@
 .main-container .bismillah {
     margin: 20px 0;
 }
+
+@media (max-width:820px) {
+    .service-container h1 {
+        text-align: center;
+    }
+
+    .main-container h1 {
+        width: 100%;
+        font-size: 50px !important;
+    }
+
+    .main-container h3,
+    p {
+        width: 100% !important;
+        padding: 0 10px;
+    }
+
+    .content ul {
+        width: 60%;
+    }
+
+    .about-section .image {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .about-section .content {
+        padding: 0;
+    }
+
+    .student-says {
+        height: auto;
+    }
+
+    .students-container p {
+        font-size: 16px !important;
+        width: 100%;
+    }
+
+    .student-says .heading {
+        text-align: center !important;
+    }
+
+    .swiper-slide {
+        padding: 40px !important;
+    }
+}

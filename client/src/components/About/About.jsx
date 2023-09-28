@@ -1,9 +1,10 @@
 import React from 'react'
 import line from '../../img/line.png'
 import './About.css'
+import { Link } from 'react-router-dom'
 import quran from '../../img/1607671953972-removebg-preview.png'
 
-const Services = () => {
+const About = () => {
     return (
         <div className="about-section">
             <div className="content">
@@ -25,7 +26,7 @@ const Services = () => {
                         <li>Quran Reading Course</li>
                     </ul>
                 </div>
-                <a href="#">Read More</a>
+                <Link to="/about">Read More</Link>
             </div>
             <div className="image">
                 <div className="outline">
@@ -39,4 +40,4 @@ const Services = () => {
     )
 }
 
-export default Services
+export default About

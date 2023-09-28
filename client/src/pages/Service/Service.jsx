@@ -1,10 +1,10 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
-import "./ServicesPage.css"
+import Navbar from '../../components/Navbar/Navbar'
+import "./Service.css"
 import line from "../../img/line.png"
-import Footer from '../Footer/Footer'
+import Footer from '../../components/Footer/Footer'
 
-const ServicesPage = () => {
+const Service = () => {
   return (
     <>
       <div className="services-container">
@@ -63,4 +63,4 @@ const ServicesPage = () => {
   )
 }
 
-export default ServicesPage
+export default Service

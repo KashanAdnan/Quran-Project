@@ -12,11 +12,11 @@ const Navbar = ({ section }) => {
             <div className="nav-responsive">
                 <div className="nav-items">
                     <ul className="links">
-                        <li><Link to="/" className={section === "home" && "active"}>Home</Link></li>
-                        <li><Link to="/about" className={section === "about-us" && "active"}>About Us</Link></li>
-                        <li><Link to="/services" className={section === "our-services" && "active"}>Our Services</Link></li>
-                        <li><Link to="/packages" className={section === "packages" && "active"}>Packages</Link></li>
-                        <li><Link to="/contact" className={section === "contact-us" && "active"}>Contact Us</Link></li>
+                        <li><Link to="/" className={section === "home" ? "active" : "home"}>Home</Link></li>
+                        <li><Link to="/about" className={section === "about-us" ? "active" : "about-us"}>About Us</Link></li>
+                        <li><Link to="/services" className={section === "our-services" ? "active" : "our-services"}>Our Services</Link></li>
+                        <li><Link to="/packages" className={section === "packages" ? "active" : "packages"}>Packages</Link></li>
+                        <li><Link to="/contact" className={section === "contact-us" ? "active" : "contact-us"}>Contact Us</Link></li>
                     </ul>
                 </div>
                 <div className="button">

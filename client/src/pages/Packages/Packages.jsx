@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from "../Navbar/Navbar"
-import Footer from "../Footer/Footer"
+import Navbar from "../../components/Navbar/Navbar"
+import Footer from "../../components/Footer/Footer"
 import "./Packages.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
@@ -37,7 +37,7 @@ const Packages = () => {
           <div className="pacakges-card">
             <div className="package-header">
               <h1>Package 2</h1>
-              <p>2 Days /Week</p>
+              <p>3 Days /Week</p>
               <h2>8 Classes/Month</h2>
             </div>
             <div className="packages-center">
@@ -54,7 +54,7 @@ const Packages = () => {
           <div className="pacakges-card">
             <div className="package-header">
               <h1>Package 3</h1>
-              <p>2 Days /Week</p>
+              <p>5 Days /Week</p>
               <h2>8 Classes/Month</h2>
               <span>POPULAR</span>
             </div>
@@ -72,7 +72,7 @@ const Packages = () => {
           <div className="pacakges-card">
             <div className="package-header">
               <h1>Package 4</h1>
-              <p>2 Days /Week</p>
+              <p>Weekend Days /Week</p>
               <h2>8 Classes/Month</h2>
             </div>
             <div className="packages-center">

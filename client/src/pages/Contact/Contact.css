@@ -30,11 +30,11 @@
 .contact-ways .way {
     text-align: center;
     width: 350px;
-    font-family: "PT Sans";
 }
 
 .way p {
     font-size: 20px;
+    font-family: "PT Sans" !important;
 }
 
 .contact-form button {
@@ -119,4 +119,8 @@
     height: 140px;
     resize: none;
     outline: 0;
+}
+
+.toast {
+    font-family: "Poppins" !important;
 }

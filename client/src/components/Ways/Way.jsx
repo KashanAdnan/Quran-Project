@@ -5,20 +5,20 @@ import quran from "../../img/quran.png"
 
 const Way = () => {
     return (
-        <div class="easy-ways">
+        <div className="easy-ways">
             <h3>Begin Learning</h3>
-            <h1 class="heading">Quran Now in 3 Easy Steps</h1>
-            <div class="lines">
+            <h1 className="heading">Quran Now in 3 Easy Steps</h1>
+            <div className="lines">
                 <img src={line} alt="" />
                 <img src={line} alt="" />
             </div>
-            <div class="ways-container">
-                <div class="ways">
-                    <div class="ways-card">
-                        <div class="icons">
-                            <i class="fa-regular fa-hand-pointer"></i>
+            <div className="ways-container">
+                <div className="ways">
+                    <div className="ways-card">
+                        <div className="icons">
+                            <i className="fa-regular fa-hand-pointer"></i>
                         </div>
-                        <div class="content">
+                        <div className="content">
                             <h1>Click on Register Online</h1>
                             <p>Simply click on “Register Online” and a tab for online registration will open. There, enter
                                 your
@@ -27,11 +27,11 @@ const Way = () => {
                                 providing us theses basic credentials, your process for registration will be complete.</p>
                         </div>
                     </div>
-                    <div class="ways-card">
-                        <div class="icons">
-                            <i class="fa-solid fa-calendar-days"></i>
+                    <div className="ways-card">
+                        <div className="icons">
+                            <i className="fa-solid fa-calendar-days"></i>
                         </div>
-                        <div class="content">
+                        <div className="content">
                             <h1>Pick a Time for Free Trial:</h1>
                             <p>Upon receiving your request for registration, we will get in touch with you to set a time as
                                 to
@@ -40,11 +40,11 @@ const Way = () => {
                                 process and tell you a little bit about our organization.</p>
                         </div>
                     </div>
-                    <div class="ways-card">
-                        <div class="icons">
-                            <i class="fa-solid fa-book-quran"></i>
+                    <div className="ways-card">
+                        <div className="icons">
+                            <i className="fa-solid fa-book-quran"></i>
                         </div>
-                        <div class="content">
+                        <div className="content">
                             <h1>
                                 Embark On this Holy Journey with your 1st Class:</h1>
                             <p>Initiate your Quran learning process by logging in with the credentials we provide you and
@@ -54,8 +54,8 @@ const Way = () => {
                         </div>
                     </div>
                 </div>
-                <div class="ways-image">
-                    <img class="quran" src={quran} alt="" />
+                <div className="ways-image">
+                    <img className="quran" src={quran} alt="" />
                     <img src={line} alt="" />
                 </div>
             </div>

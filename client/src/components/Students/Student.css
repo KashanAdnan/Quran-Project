@@ -40,15 +40,15 @@
     margin: 10px 0;
 }
 
-.swiper-slide p {
+.swiper-slide p i {
     font-size: 28px;
-    font-family: "PT Sans";
+    font-family: "PT Sans" !important;
     color: #888377;
     margin-bottom: 10px;
 }
 
 .swiper-slide h1 {
-    font-family: "PT Sans";
+    font-family: "PT Sans" !important;
     font-size: 17px;
 }
 

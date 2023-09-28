@@ -6,17 +6,17 @@ const Footer = () => {
     return (
 
         <footer>
-            <div class="cols">
-                <div class="col col-1">
+            <div className="cols">
+                <div className="col col-1">
                     <img src={logo} alt="logo" />
                     <p>We offer free online classes online anytime.Urdu and English language</p>
-                    <div class="icons">
-                        <i class="fa-brands fa-instagram"></i>
-                        <i class="fa-brands fa-facebook"></i>
-                        <i class="fa-brands fa-youtube"></i>
+                    <div className="icons">
+                        <i className="fa-brands fa-instagram"></i>
+                        <i className="fa-brands fa-facebook"></i>
+                        <i className="fa-brands fa-youtube"></i>
                     </div>
                 </div>
-                <div class="col col-2">
+                <div className="col col-2">
                     <h1>QUICK MENU</h1>
                     <ul>
                         <li>Home</li>
@@ -26,7 +26,7 @@ const Footer = () => {
                         <li>Contact Us</li>
                     </ul>
                 </div>
-                <div class="col col-3">
+                <div className="col col-3">
                     <h1>SERVICES</h1>
                     <ul>
                         <li>Learn Basic Islamic Concepts</li>
@@ -36,16 +36,16 @@ const Footer = () => {
                         <li> Elementary Quran Reading Course</li>
                     </ul>
                 </div>
-                <div class="col col-4">
+                <div className="col col-4">
                     <h1>CONTACT</h1>
                     <ul>
-                        <li><i class="fa-solid fa-envelope"></i>info@wasifbinasif.com</li>
-                        <li><i class="fa-solid fa-phone"></i>+92 331 3633434</li>
+                        <li><i className="fa-solid fa-envelope"></i>info@wasifbinasif.com</li>
+                        <li><i className="fa-solid fa-phone"></i>+92 331 3633434</li>
                     </ul>
                 </div>
             </div>
             <hr />
-            <div class="footer-bottom">
+            <div className="footer-bottom">
                 <p>Copyright © 2023 . All rights reserved by Wasif Bin Asif</p>
             </div>
         </footer>
