@@ -8,7 +8,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie'
 
 const Login = () => {
-    
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [cookies, setCookie, removeCookie] = useCookies(['token']);
@@ -17,7 +16,7 @@ const Login = () => {
         e.preventDefault();
         axios.post("http://localhost:3000/api/v1/login", { email, password }).then(async (res) => {
             toast.success("Login Successfully!");
-            setCookie("token", res.data.token, { expires: new Date(Date.now() + 600000), httpOnly: true, withCredentials: true })
+            setCookie("token", res.data.token, { expires: new Date(Date.now() + 600000), })
             navigate("/")
         }).catch((err) => {
             toast.error(err.response.data.error)

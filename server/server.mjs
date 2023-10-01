@@ -84,17 +84,22 @@ app.post("/api/v1/login", async (req, res) => {
 });
 
 app.get("/api/v1/profile/:token", (req, res) => {
-  const token = req.params.token;
-  if (token) {
+  const token = req?.params?.token;
+  if (token === "undefined") {
+    res.status(404).send({
+      message: "Token Not Found !"
+    })
+  } else if (!token) {
+    res.status(404).send({
+      message: "Token Not Found !"
+    })
+  }
+  else {
     jsonwebtoken.verify(token, process.env.JWT_SECRET, {}, async (err, decodedToken) => {
       if (err) throw err;
       const user = await userModel.findOne({ _id: decodedToken._id });
       res.json(user)
     });
-  } else {
-    res.status(404).send({
-      message: "Token Not Found !"
-    })
   }
 });
 

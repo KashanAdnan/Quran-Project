@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import "./Service.css"
 import line from "../../img/line.png"
@@ -8,11 +8,16 @@ import axios from "axios"
 const Service = () => {
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
   const [user, setUser] = useState({})
-  axios.get("http://localhost:3000/api/v1/profile/" + cookies?.token).then((res) => {
-    setUser(res.data)
-  }).catch((err) => {
-    console.log("Logout");
-  })
+  const getData = () => {
+    axios.get("http://localhost:3000/api/v1/profile/" + cookies?.token).then((res) => {
+      setUser(res.data)
+    }).catch((err) => {
+      console.log("Logout");
+    })
+  }
+  useEffect(() => {
+    getData()
+  }, [])
   return (
     <>
       <div className="services-container">

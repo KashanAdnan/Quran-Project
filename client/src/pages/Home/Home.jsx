@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import About from "../../components/About/About";
 import "./Home.css";
@@ -7,17 +7,23 @@ import Student from "../../components/Students/Student";
 import Footer from "../../components/Footer/Footer";
 import Way from "../../components/Ways/Way";
 import { useCookies } from 'react-cookie'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
+  const navigate = useNavigate()
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
   const [user, setUser] = useState({})
-  axios.get("http://localhost:3000/api/v1/profile/" + cookies?.token).then((res) => {
-    setUser(res.data)
-  }).catch((err) => {
-    console.log("Logout");
-  })
+  const getData = () => {
+    axios.get("http://localhost:3000/api/v1/profile/" + cookies?.token).then((res) => {
+      setUser(res.data)
+    }).catch((err) => {
+      console.log("Logout");
+    })
+  }
+  useEffect(() => {
+    getData()
+  }, [])
   return (
     <>
       <div className="container">

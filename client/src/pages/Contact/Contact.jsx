@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect,useRef, useState } from 'react'
 import "./Contact.css"
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"
@@ -15,11 +15,16 @@ const Contact = () => {
   const form = useRef();
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
   const [user, setUser] = useState({})
-  axios.get("http://localhost:3000/api/v1/profile/" + cookies?.token).then((res) => {
-    setUser(res.data)
-  }).catch((err) => {
-    console.log("Logout");
-  })
+  const getData = () => {
+    axios.get("http://localhost:3000/api/v1/profile/" + cookies?.token).then((res) => {
+      setUser(res.data)
+    }).catch((err) => {
+      console.log("Logout");
+    })
+  }
+  useEffect(() => {
+    getData()
+  }, [])
   const navigate = useNavigate()
 
   const sendEmail = (e) => {
