@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import "./Service.css"
 import line from "../../img/line.png"
 import Footer from '../../components/Footer/Footer'
-
+import { useCookies } from 'react-cookie'
+import axios from "axios"
 const Service = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(['token']);
+  const [user, setUser] = useState({})
+  axios.get("http://localhost:3000/api/v1/profile/" + cookies?.token).then((res) => {
+    setUser(res.data)
+  }).catch((err) => {
+    console.log("Logout");
+  })
   return (
     <>
       <div className="services-container">
-        <Navbar section={"our-services"} />
+        <Navbar section={"our-services"} user={user} />
         <div className="main-container">
           <h1>Our Services</h1>
         </div>

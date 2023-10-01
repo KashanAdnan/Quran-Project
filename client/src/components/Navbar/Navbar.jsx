@@ -4,9 +4,10 @@ import logo from "../../img/logo.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-
-const Navbar = ({ section }) => {
+import { useCookies } from "react-cookie"
+const Navbar = ({ section, user }) => {
   const [button, setButton] = useState(true);
+  const [cookies, setCookie, removeCookie] = useCookies(['token'])
   if (screen.width === 820) {
     setButton(true);
   }
@@ -16,6 +17,10 @@ const Navbar = ({ section }) => {
   const CloseNavbar = () => {
     setButton(false);
   };
+  const logout = () => {
+    removeCookie("token")
+    window.location.reload()
+  }
   return (
     <nav className="navbar">
       <a className="logo">
@@ -73,7 +78,10 @@ const Navbar = ({ section }) => {
           </ul>
         </div>
         <div className="button">
-          <Link to="/register">Register now for free</Link>
+          {
+            user?.name ? <button onClick={logout}>Logout</button> :
+              <Link to="/register">Register now for free</Link>
+          }
         </div>
         <FontAwesomeIcon
           onClick={CloseNavbar}

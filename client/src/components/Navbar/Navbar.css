@@ -44,28 +44,38 @@ nav.navbar .nav-items .links li a.active {
   color: #b99534;
 }
 
-nav.navbar .button a {
+nav.navbar .button a,
+nav.navbar .button button {
   background-color: #b99534;
   color: #fff;
   text-decoration: none;
   padding: 18px 22px 13px;
   border-radius: 5px;
   font-size: 15px;
+  border: 0;
   font-family: "Poppins";
   cursor: pointer;
 }
+
+.username {
+  text-transform: capitalize;
+}
+
 @media (min-width:820px) {
+
   .bars,
   .xmark {
     display: none !important;
   }
 }
+
 @media (max-width: 820px) {
   .bars {
     font-size: 30px;
     cursor: pointer;
     display: block;
   }
+
   .nav-responsive {
     position: fixed;
     flex-direction: column;
@@ -80,21 +90,26 @@ nav.navbar .button a {
 
     transition: 0.5s;
   }
+
   .nav-items ul {
     flex-direction: column;
     margin-bottom: 20px;
     width: 100% !important;
   }
+
   .nav-items li {
     height: 40px;
   }
+
   .nav-items {
     width: 100%;
   }
+
   .navbar .button {
     width: 100% !important;
     margin-left: 30px !important;
   }
+
   .xmark {
     position: fixed;
     top: 20px;

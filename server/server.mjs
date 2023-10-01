@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 import "./setupEnv.mjs";
 import { hashPassword, comparePassword } from "./helpers/auth.mjs";
 import connectDatabase from "./DB/connectDB.mjs";
-import jwt from "jsonwebtoken";
+import jsonwebtoken from "jsonwebtoken";
 
 connectDatabase(process.env.MONGODB_URI);
 const app = express();
@@ -15,8 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cors({
-    credentials: true,
-    origin: "http://localhost:5173",
+    origin: "*",
+    credentials: true
   })
 );
 
@@ -57,7 +57,9 @@ app.post("/api/v1/register", async (req, res) => {
       sucess: true,
       user,
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 app.post("/api/v1/login", async (req, res) => {
@@ -70,41 +72,28 @@ app.post("/api/v1/login", async (req, res) => {
   }
   const matchPassword = comparePassword(password, user.password);
   if (matchPassword) {
-    jwt.sign(
-      { name: user.name, email: user.email, phone: user.phone, id: user._id },
-      process.env.JWT_SECRET,
-      {},
-      (err, token) => {
-        if (err) {
-          throw err;
-        }
-        console.log(token);
-        res
-          .cookie(" token", token, {
-            expires: new Date(Date.now() + 9999999),
-            httpOnly: false,
-          })
-          .send({ user, token });
-      }
-    );
+    const token = jsonwebtoken.sign({ _id: user._id }, process.env.JWT_SECRET);
+    res.cookie('token', token, { expires: new Date(Date.now() + 600000), httpOnly: true, secure: true, withCredentials: true });
+    res.json({ token });
   }
-  if (!matchPassword) {
+  else {
     res.status(200).send({
       message: "Password Do Not Matched",
     });
   }
 });
 
-app.get("/api/v1/profile", (req, res) => {
-  const { token } = req.cookies;
+app.get("/api/v1/profile/:token", (req, res) => {
+  const token = req.params.token;
   if (token) {
-    jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
+    jsonwebtoken.verify(token, process.env.JWT_SECRET, {}, async (err, decodedToken) => {
       if (err) throw err;
-      res.json(user);
+      const user = await userModel.findOne({ _id: decodedToken._id });
+      res.json(user)
     });
-  }else{
+  } else {
     res.status(404).send({
-        message : "Token Not Found !"
+      message: "Token Not Found !"
     })
   }
 });

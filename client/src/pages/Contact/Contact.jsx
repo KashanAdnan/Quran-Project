@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import "./Contact.css"
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"
@@ -6,10 +6,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { toast, Toaster } from "react-hot-toast"
 import emailjs from '@emailjs/browser';
+import { useCookies } from 'react-cookie'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import axios from "axios"
+import { useNavigate } from 'react-router-dom'
 
 const Contact = () => {
   const form = useRef();
+  const [cookies, setCookie, removeCookie] = useCookies(['token']);
+  const [user, setUser] = useState({})
+  axios.get("http://localhost:3000/api/v1/profile/" + cookies?.token).then((res) => {
+    setUser(res.data)
+  }).catch((err) => {
+    console.log("Logout");
+  })
+  const navigate = useNavigate()
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -23,6 +34,7 @@ const Contact = () => {
       .then(
         (result) => {
           toast.success("Email Send To Wasif Bin Asif!")
+          navigate("/")
         },
         (error) => {
           console.log(error.text);
@@ -32,7 +44,7 @@ const Contact = () => {
   return (
     <>
       <div className="contact-container">
-        <Navbar section={"contact-us"} />
+        <Navbar section={"contact-us"} user={user} />
         <div className="main-container">
           <h1>Contact</h1>
         </div>
@@ -55,15 +67,15 @@ const Contact = () => {
         <form onSubmit={sendEmail} ref={form} className="contact-form">
           <div className="input-label">
             <label htmlFor="Name">Name</label>
-            <input name='name' type="text" placeholder='Your Name' />
+            <input name='name' value={user?.name} type="text" placeholder='Your Name' />
           </div>
           <div className="input-label">
             <label htmlFor="Email">Email</label>
-            <input name='email' type="email" placeholder='Email Address' />
+            <input name='email' value={user?.email} type="email" placeholder='Email Address' />
           </div>
           <div className="input-label">
             <label htmlFor="Phone">Phone</label>
-            <input name='number' type="number" placeholder='Phone Number' />
+            <input name='number' value={user?.phone} type="number" placeholder='Phone Number' />
           </div>
           <div className="input-label course">
             <label htmlFor="Course">Course</label>

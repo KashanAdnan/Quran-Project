@@ -5,20 +5,22 @@ import Footer from "../../components/Footer/Footer"
 import axios from "axios";
 import { toast, Toaster } from "react-hot-toast"
 import { Link, useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie'
 
 const Login = () => {
+    
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [cookies, setCookie, removeCookie] = useCookies(['token']);
     const navigate = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3000/api/v1/login", { email, password }).then((res) => {
-            toast.success("Login Successfully!")
-            setInterval(() => {
-                navigate("/")
-            }, 700)
+        axios.post("http://localhost:3000/api/v1/login", { email, password }).then(async (res) => {
+            toast.success("Login Successfully!");
+            setCookie("token", res.data.token, { expires: new Date(Date.now() + 600000), httpOnly: true, withCredentials: true })
+            navigate("/")
         }).catch((err) => {
-                toast.error(err.response.data.error)
+            toast.error(err.response.data.error)
         })
     }
     return (

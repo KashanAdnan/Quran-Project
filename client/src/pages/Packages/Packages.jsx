@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"
 import "./Packages.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 import { Link } from 'react-router-dom'
+import { useCookies } from 'react-cookie'
+import axios from "axios"
 
 const Packages = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(['token']);
+  const [user, setUser] = useState({})
+  axios.get("http://localhost:3000/api/v1/profile/" + cookies?.token).then((res) => {
+    setUser(res.data)
+  }).catch((err) => {
+    console.log("Logout");
+  })
   return (
     <>
       <div className="pacakges-container">
-        <Navbar section={"packages"} />
+        <Navbar section={"packages"} user={user} />
         <div className="main-container">
           <h1>Pacakges</h1>
         </div>
