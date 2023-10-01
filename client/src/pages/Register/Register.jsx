@@ -17,7 +17,7 @@ const Register = () => {
         axios.post("http://localhost:3000/api/v1/register", { name, phone, email, password }).then((res) => {
             toast.success("Register Successfully!")
             setInterval(() => {
-                navigate("/")
+                navigate("/login")
             }, 700)
         }).catch((err) => {
             toast.error(err.response.data.error)
