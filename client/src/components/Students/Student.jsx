@@ -12,11 +12,11 @@ const Student = () => {
       <h3>What Our</h3>
       <h1 className="heading">Students Says</h1>
       <img src={line} alt="" />
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+      <Swiper loop={true} navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>
           <div className="students-container">
             <p><i>
-              "Enrolling in the Al Safaa quran institute was the best decision I made. The interactive classes, comprehensive curriculum, and supportive community have helped me grow spiritually and intellectually."
+              "Enrolling in the Wasif Bin Asif quran institute was the best decision I made. The interactive classes, comprehensive curriculum, and supportive community have helped me grow spiritually and intellectually."
             </i>
             </p>
             <img src="https://alsafaaquran.com/wp-content/uploads/2023/07/arabic-businessman-traditional-wear-sitting-table-with-laptop-computer-happy-positive-smiling-showing-thumbs-up-working-office-min-scaled.jpg"
